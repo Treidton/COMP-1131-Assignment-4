@@ -1,0 +1,165 @@
+//******************************************************************************
+// CardDriver.java
+// Tyler Shipton    T00691413
+// COMP 1131 Assignment 4 Project 2
+// A main class that displays the suits and ranks of cards using the Card.java
+// class.
+//******************************************************************************
+
+public class CardDriver {
+    
+    
+    public static void main(String[]  args){
+        // randomly generated cards using default constructor.
+        Card card1 = new Card();
+        Card card2 = new Card();
+        Card card3 = new Card();
+        Card card4 = new Card();
+        Card card5 = new Card();
+       
+        // displays values of card.
+        System.out.println(card1);
+        System.out.println(card2);
+        System.out.println(card3);
+        System.out.println(card4);
+        System.out.println(card5);
+        
+        // specific input using the second constructor.
+        Card card6 = new Card(1, 1);
+        Card card7 = new Card(4, 3);
+        Card card8 = new Card(3, 12);
+        Card card9 = new Card(3, 9);
+        Card card10 = new Card(5, 15);
+        
+        // displays values of card.
+        System.out.println(card6);
+        System.out.println(card7);
+        System.out.println(card8);
+        System.out.println(card9);
+        System.out.println(card10);
+    }
+}
+
+/// methods and class that represent card.
+
+import java.util.Random;
+
+public class Card {
+   
+// declaring variables.    
+private int suit;
+private int rank;
+String getRank;
+String getSuit;
+
+// default constructor for card.
+public Card(){
+Random generator = new Random();
+suit = generator.nextInt(4) + 1;
+rank = generator.nextInt(13) + 1;
+}
+
+// second constructor.
+public Card(int suit, int rank){
+    if (suit >= 1 && suit <= 4)
+        this.suit = suit;
+    
+    if (rank >= 1 && rank <= 13)
+        this.rank = rank;
+    
+}
+// getSuit accessor.
+public int getSuit(){
+    return suit;
+}
+
+// getRank accessor.
+public int getRank(){
+    return rank;   
+}
+
+// setSuit mutator.
+public void setSuit(int suit){
+    if (suit >= 1 && suit <= 4)
+        this.suit = suit;   
+}
+ // setRank mutator. 
+public void setRank(int rank){
+    if (rank >= 1 && rank <= 13)
+        this.rank = rank;
+}
+
+// Returns a string representation of the suit and rank values.
+public String toString() {
+    // toString for suit.
+    switch (suit) {
+        case 1:
+            getSuit = "Spades";
+            break;
+        case 2:
+            getSuit = "Hearts";
+            break;
+        case 3:
+            getSuit = "Clubs";
+            break;
+        case 4:
+            getSuit = "Diamonds";
+            break;
+        default:
+            getSuit = "INVALID SUIT";
+            break;
+    }     
+    // toString for rank.
+    switch (rank) {
+        case 1:
+            getRank = "Ace";
+            break;
+        case 2:
+            getRank = "Two";
+            break;
+        case 3:
+            getRank = "Three";
+            break;
+        case 4:
+            getRank = "Four";
+            break;
+        case 5:
+            getRank = "Five";
+            break;
+        case 6:
+            getRank = "Six";
+            break;
+        case 7:
+            getRank = "Seven";
+            break;
+        case 8:
+            getRank = "Eight";
+            break;
+        case 9:
+            getRank = "Nine";
+            break;
+        case 10:
+            getRank = "Ten";
+            break;
+        case 11:
+            getRank = "Jack";
+            break;
+        case 12:
+            getRank = "Queen";
+            break;
+        case 13:
+            getRank = "King";
+            break;
+        default:
+            getRank = "INVALID RANK";
+            break;
+    }
+    
+     
+      return getRank + " of " + getSuit;
+  }
+
+  
+}
+        
+
