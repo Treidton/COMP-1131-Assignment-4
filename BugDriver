@@ -46,3 +46,56 @@ public class BugDriver
 
     }
 }
+
+//******************************************************************************
+// Bug.java
+// Tyler Shipton    T00691413
+// COMP 1131 Assignment 4 Project 1
+// A class that represents a bug moving across a horizontal wire.
+//******************************************************************************
+
+
+public class Bug
+{
+    // sets the variables
+    private int position;
+    private String direction;
+   
+    // Declares Bug constructor and the starting position.
+    public Bug()
+    {
+        position = 0;
+        direction = "right";
+    }
+ 
+     // sets method to move the Bug. Bug will only move the direction it is
+    // faceing.
+    public void movePosition()
+    {
+        if (direction.equalsIgnoreCase("right"))
+            position++;
+        else if (direction.equalsIgnoreCase("left"))
+            position--;
+    }
+
+    // switches direction of the bug.
+    public void switchDirection() {
+       
+        if (direction.equals("right"))
+            direction = "left";
+        else if (direction.equals("left"))
+            direction = "right";
+    }
+    
+    // returns bug to original position
+    public void start() {
+        position = 0;
+        direction = "right";
+    }
+    
+    // returns the position and direction into a String.
+   public String toString()
+   {
+       return "Position: " + position + "\t" + "Direction: " + direction;
+   }
+ }
