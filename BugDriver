@@ -1,0 +1,48 @@
+//******************************************************************************
+// BugDriver.java
+// Tyler Shipton    T00691413
+// COMP 1131 Assignment 4 Project 1
+// A driver that will prompt the user to command the Bug in different positions.
+//******************************************************************************
+
+import java.util.Scanner;
+
+public class BugDriver
+{
+    
+    public static void main(String[]    args)
+    {
+        Bug newBug = new Bug();             // creates new bug.
+        Scanner scan = new Scanner(System.in);
+        String answer = "";
+        
+        while (!"q".equalsIgnoreCase(answer)){
+            System.out.println("Enter an option: Move(m), Turn(t),  "
+                    + "Original Position(p), Output(o), or Quit(q)");
+              answer = scan.next();
+           
+            if (answer.equalsIgnoreCase("m")){
+                newBug.movePosition();
+                
+                }
+            else if (answer.equalsIgnoreCase("t")){
+                newBug.switchDirection();
+                
+                }
+            
+            else if (answer.equalsIgnoreCase("p")){
+                newBug.start();
+                
+            }
+            else if (answer.equalsIgnoreCase("o")){
+                System.out.println(newBug);
+            }
+        
+        else if (answer.equalsIgnoreCase("q")){
+                System.out.println("You quit");
+            }
+                
+       }
+
+    }
+}
