@@ -47,12 +47,7 @@ public class BugDriver
     }
 }
 
-//******************************************************************************
-// Bug.java
-// Tyler Shipton    T00691413
-// COMP 1131 Assignment 4 Project 1
-// A class that represents a bug moving across a horizontal wire.
-//******************************************************************************
+// methods for BugDriver
 
 
 public class Bug
